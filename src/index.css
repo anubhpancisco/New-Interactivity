@@ -1,0 +1,353 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f1419;
+  --surface: #1a222d;
+  --surface-2: #232d3a;
+  --text: #e8eef5;
+  --muted: #9fb0c3;
+  --accent: #3d8bfd;
+  --accent-dim: #2a62b3;
+  --border: #334155;
+  --ok: #34d399;
+  --radius: 12px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+}
+
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --surface-2: #eef2f7;
+    --text: #0f172a;
+    --muted: #475569;
+    --accent: #1d63d8;
+    --accent-dim: #174ea6;
+    --border: #cbd5e1;
+  }
+}
+
+.appShell {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.appHeader {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  font-weight: 650;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 62ch;
+}
+
+.toggle {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.appMain {
+  padding-top: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.fineprint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.primary,
+.secondary,
+.option {
+  font: inherit;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  border-color: var(--accent-dim);
+  color: #fff;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.secondary {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.option {
+  text-align: left;
+  background: var(--surface-2);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.option:hover {
+  border-color: var(--accent);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.linkish {
+  border: none;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.progressWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.progressBar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 220ms ease;
+}
+
+.roleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roleTag {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.roleTag.inline {
+  margin-bottom: 6px;
+}
+
+.question {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pivotBanner {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  background: var(--surface-2);
+}
+
+.pivotBanner h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.pivotBanner p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.facilitator {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+}
+
+.facilitator summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.facilitator p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.exampleList {
+  margin: 10px 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.exampleList li + li {
+  margin-top: 8px;
+}
+
+.notes.part1Answer {
+  min-height: 140px;
+}
+
+.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.notesLabel {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.notes {
+  width: 100%;
+  resize: vertical;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font: inherit;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.transcript {
+  margin: 0;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  white-space: pre-wrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.transcriptBlock {
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.transcriptBlock:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.appFooter {
+  padding-top: 16px;
+}
+
+@media (max-width: 720px) {
+  .appHeader {
+    flex-direction: column;
+  }
+}
